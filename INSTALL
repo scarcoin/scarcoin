@@ -1,0 +1,9 @@
+Building Scarcoin
+
+See doc/readme-qt.rst for instructions on building Scarcoin-QT,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of Scarcoin.
+
+See doc/build-*.txt for instructions on building scarcoind,
+the intended-for-services, no-graphical-interface, reference
+implementation of Scarcoin.
