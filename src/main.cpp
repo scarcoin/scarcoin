@@ -894,7 +894,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees, uint256 prevHash)
                 cseed_str = prevHash.ToString().substr(6,7);
                 cseed = cseed_str.c_str();
                 seed = hex2long(cseed);
-                rand5 = generateMTRandom(seed, 62,499);
+                rand5 = generateMTRandom(seed, 62499);
                 nSubsidy = (1 + rand5) * COIN;
         }
  
