@@ -894,7 +894,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees, uint256 prevHash)
                 cseed_str = prevHash.ToString().substr(6,7);
                 cseed = cseed_str.c_str();
                 seed = hex2long(cseed);
-                rand5 = generateMTRandom(seed, 62,499);
+                rand5 = generateMTRandom(seed, 62499);
                 nSubsidy = (1 + rand5) * COIN;
         }
  
@@ -2062,7 +2062,7 @@ bool LoadBlockIndex(bool fAllowNew)
         pchMessageStart[1] = 0xc1;
         pchMessageStart[2] = 0xb7;
         pchMessageStart[3] = 0xdc;
-        hashGenesisBlock = uint256("0x");
+        hashGenesisBlock = uint256("0x97e0df839c0468fa18258db755b7891dc49d50262cde04e1de3cf662c3fcc338");
     }
 
     //
@@ -2112,14 +2112,14 @@ bool LoadBlockIndex(bool fAllowNew)
         if (fTestNet)
         {
             block.nTime    = 1389423080;
-            block.nNonce   = 0;
+            block.nNonce   = 1310411;
         }
 
         //// debug print
         printf("block.GetHash() = %s\n", block.GetHash().ToString().c_str());
         printf("hashGenesisBlock = %s\n", hashGenesisBlock.ToString().c_str());
         printf("block.hashMerkleRoot = %s\n", block.hashMerkleRoot.ToString().c_str());
-        assert(block.hashMerkleRoot == uint256("0x5b2a3f53f605d62c53e62932dac6925e3d74afa5a4b459745c36d42d0ed26a69"));
+        assert(block.hashMerkleRoot == uint256("ca49df036b72980fcb8ef21be84e8120e07b52d0e8e2503583d4ef948e6e8938"));
 
 if (true && block.GetHash() != hashGenesisBlock)
         {
